@@ -7,9 +7,10 @@ import React, { useEffect, useState } from "react";
 
 function Home() {
   const [name, setname] = useState("");
-
+  
   
   useEffect(() => {
+      console.log("shamim");
     const fetched =async()=>{
      await fetch(import.meta.env.VITE_urls)
         .then((res) => res.json())
