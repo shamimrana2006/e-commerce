@@ -5,6 +5,6 @@ const cors = require("cors")
 app.use(cors())
 
 app.get("/",(req,res)=>{
-    res.json({name: "shamim"})
+    res.json({name: "Foysal Mia"})
 })
 module.exports = app
