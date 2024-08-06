@@ -10,7 +10,7 @@ function Home() {
   
   
   useEffect(() => {
-      console.log("shamim");
+      console.log("shamim rana");
     const fetched =async()=>{
      await fetch(import.meta.env.VITE_urls)
         .then((res) => res.json())
