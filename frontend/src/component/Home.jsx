@@ -22,7 +22,7 @@ function Home() {
   
   return (
     <div> 
-      <h1 className="text-green-500 text-center text-bold uppercase font-semibold text-7xl">{name} </h1>
+      <h1 className="text-green-500 text-center text-bold uppercase font-semibold text-7xl">{name} <br /> <hr /> tui ki korbi kor </h1>
     </div>
   );
 }
