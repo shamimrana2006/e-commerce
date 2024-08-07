@@ -16,15 +16,17 @@ function Home() {
       await fetch(import.meta.env.VITE_urls)
         .then((res) => res.json())
         .then((data) => setname(data.name));
-       setLoading(false)
+
+       
     };
+    fetched()
    
   }, []);
 
   return (
     <div>
       
-      {false ? <Loadings /> : false }
+      {name}
       <Login />
     </div>
   );
