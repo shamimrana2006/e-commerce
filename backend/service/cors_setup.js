@@ -9,6 +9,7 @@ const cors_urls = JSON.parse(process.env.cors_url);
 const allow_Cors_urls = (req, callback) => {
     var cors_option;
   console.log(cors_urls.indexOf(req.header("origin")));
+  console.log(req.header("origin"));
    
   if (cors_urls.indexOf(req.header("origin")) !== -1) {
     cors_option = { origin: true };
