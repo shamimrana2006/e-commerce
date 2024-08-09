@@ -5,8 +5,9 @@ function Login() {
     <div className="w-screen h-screen flex items-center justify-center bg-gray-200 text-white">
       <form
         action="#"
-        className="w-18 grid rounded-xl items-center text-black gap-2 text-center bg-white p-10"
+        className="w-18 grid rounded-xl items-center text-black gap-2 text-center bg-white px-10 py-5"
       >
+        <h1  className="font-bold tilte text-green-400 font-mono">Login</h1>
         <input
           type="text"
           name="email"

@@ -18,7 +18,7 @@ function Home() {
         .then((data) => setname(data.name));
 
        
-    };
+    }; 
     fetched()
    
   }, []);
