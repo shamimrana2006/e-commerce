@@ -15,10 +15,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/shamim",async(req,res)=>{
-  console.log("shamim");
+  console.log("start");
   
+ const all_user = await users_model.find({})
 
-  success_res(res,{status_code: 200, payload: "shamim"})
+  success_res(res,{status_code: 200, payload: all_user})
 })
 app.use("/reset/",seed_router)
 app.use("/api/",user_router)
