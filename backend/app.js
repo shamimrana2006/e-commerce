@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/shamim",async(req,res)=>{
-  const all_users = await users_model.find({})
+  const all_users = await users_model.find({}).skip(6)
 
   success_res(res,{status_code: 200, payload: all_users})
 })
