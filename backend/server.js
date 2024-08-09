@@ -8,6 +8,9 @@ const url = process.env.cors_url;
 
 app.listen(port, async() => {
    
+   
+  await DB_connection();
   console.log(`server is running at http://localhost:${port}`);
 
 });
+ 
