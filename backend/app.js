@@ -9,16 +9,18 @@ const { success_res } = require("./service/responsed_handlling");
 const { DB_connection } = require("./service/db_connection");
 
 app.use(cors_setup);
+app.use(async (rq,res,next) => {
+  await DB_connection();
+  next()
+});
 app.use(express.json());
-app.use(express.urlencoded({extended: true}))
-app.get("/", async(req, res) => {
+app.use(express.urlencoded({ extended: true }));
+app.get("/", async (req, res) => {
   res.json({ name: "welcome our server" });
-  await  DB_connection();
 });
 
-
-app.use("/reset/",seed_router)
-app.use("/api/",user_router)
+app.use("/reset/", seed_router);
+app.use("/api/", user_router);
 app.use(error_handle);
 
-module.exports = app;
+module.exports = app;                            
