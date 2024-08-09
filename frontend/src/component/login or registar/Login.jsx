@@ -4,7 +4,8 @@ function Login() {
   return (
     <div className="w-screen h-screen flex items-center justify-center bg-gray-200 text-white">
       <form
-        action="#"
+        action="http://localhost:3000/api/user/registar"
+        method="post"
         className="w-18 grid rounded-xl items-center text-black gap-2 text-center bg-white px-10 py-5"
       >
         <h1  className="font-bold tilte text-green-400 font-mono">Login</h1>
@@ -16,7 +17,7 @@ function Login() {
         />
         <input
           type="text"
-          name="password"
+          name="name"
           className="outline-none p-2 rounded border-2 border-solid"
           placeholder="password"
         />
