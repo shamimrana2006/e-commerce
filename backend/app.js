@@ -6,6 +6,7 @@ const { user_router } = require("./routers/users/user_router");
 const { seed_router } = require("./routers/users/seed_users_router");
 const { users_model } = require("./models/db_model/db_model");
 const { success_res } = require("./service/responsed_handlling");
+const { DB_connection } = require("./service/db_connection");
 
 app.use(cors_setup);
 app.use(express.json());
@@ -16,8 +17,8 @@ app.get("/", (req, res) => {
 
 app.get("/shamim",async(req,res)=>{
   console.log("start");
-  
- const all_user = await users_model.find({})
+  await  DB_connection();
+ const all_user = await users_model.find({"name": "billah khan"})
 
   success_res(res,{status_code: 200, payload: all_user})
 })
