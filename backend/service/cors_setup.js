@@ -11,10 +11,10 @@ const allow_Cors_urls = (req, callback) => {
   console.log(cors_urls.indexOf(req.header("origin")));
   console.log(req.header("origin"));
    
-  if (cors_urls.indexOf(req.header("origin")) !== -1) {
-    cors_option = { origin: true };
-  } else {  
+  if (cors_urls.indexOf(req.header("origin")) === -1) {
     cors_option = { origin: false };
+  } else {  
+    cors_option = { origin: true };
   }
   callback(null, cors_option); 
 };
