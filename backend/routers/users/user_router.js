@@ -1,4 +1,4 @@
-const createError = require("http-errors");
+
 const {
   user_register,
 } = require("../../controller/user_constroller/user_controller");
@@ -9,7 +9,8 @@ const { body } = require("express-validator");
 const user_router = require("express").Router();
 
 
-
+//registar   //api/
 user_router.post("/user/registar",validationArray,runValidation,  user_register);
 
 module.exports = { user_router };
+ 

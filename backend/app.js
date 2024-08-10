@@ -17,7 +17,7 @@ app.use(async (req,res,next) => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.get("/", async (req, res) => {
-  res.json({ name: "welcome our server" });
+  res.json({ name: "welcome our server" }); 
 });
 
 app.use("/reset/", seed_router);
@@ -27,3 +27,4 @@ app.use(error_handle);
 
 
 module.exports = app;                            
+ 

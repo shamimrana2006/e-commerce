@@ -22,6 +22,8 @@ const validationArray = [
     .withMessage("enter valid email"),
 
 ];
+
+
 const runValidation = (req, res, next) => {
   try {
     const errors = validationResult(req);
