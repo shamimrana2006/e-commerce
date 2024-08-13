@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Loadings from "./loading/Loadings";
-import Login from "./login or registar/Login";
+import Register from "./login or registar/registar";
+import { Link } from "react-router-dom";
 // import Loadings from "./loading/Loadings";
 
 
@@ -45,7 +46,12 @@ function Home() {
         <button className="p-2 text-sm  rounded-lg bg-blue-200" onClick={reset_user}>Reset User</button>
       </div>
       </div>
-      <Login />
+      <div className="w-screen h-screen flex flex-col items-center justify-center bg-gray-200 text-white">
+        <h2 className="uppercase text-gray-500 ">
+          welcome
+        </h2>
+        <button><Link to="/login">aa</Link></button>
+      </div>
     </div>
   );
 }

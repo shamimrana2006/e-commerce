@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+var bcrypt = require('bcryptjs');
 
 const Schemas = new mongoose.Schema({
   name: {
@@ -14,13 +15,14 @@ const Schemas = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  phone: {
+  phone: { 
     type: String,
     required: true,
   },
-  password: {
+  password: { 
     type: String,
     required: true,
+    set: (password) => bcrypt.hashSync(password, 8)
   },
   isAdmin: {
     type: String,
@@ -32,6 +34,27 @@ const Schemas = new mongoose.Schema({
   },
 });
 
-const users_model = mongoose.model("Users_model", Schemas);
 
-module.exports = {users_model}
+const OtpSchema = mongoose.Schema ({
+  otp: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  token: {
+    type: String,
+    required: true,
+  },
+  exptime: {
+    type: Date,
+    default: () => new Date(Date.now() + 60000)
+  }
+})
+
+const users_model = mongoose.model("Users_model", Schemas);
+const Users_model_otp = mongoose.model("Users_model_otp", OtpSchema);
+
+module.exports = {users_model, Users_model_otp}

@@ -8,23 +8,21 @@ const { users_model } = require("./models/db_model/db_model");
 const { DB_connection } = require("./service/db_connection");
 const url = process.env.cors_url;
 app.use(cors_setup);
-app.use(async (req,res,next) => {
+app.use(async (req, res, next) => {
   await DB_connection();
 
-
-  next()
+  next();
 });
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 app.get("/", async (req, res) => {
-  res.json({ name: "welcome our server" }); 
+  res.json({ name: "welcome our server" });
 });
 
 app.use("/reset/", seed_router);
 app.use("/api/", user_router);
+
 app.use(error_handle);
-
-
-
-module.exports = app;                            
- 
+module.exports = app;
