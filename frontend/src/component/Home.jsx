@@ -37,7 +37,7 @@ function Home() {
 
   return (
     <div>
-      
+       
       
       <div className="flex fixed w-screen top-0 right-0 justify-between items-center p-2">
      <span> {name}</span>
@@ -57,5 +57,5 @@ function Home() {
     </div>
   );
 }
-
+ 
 export default Home;

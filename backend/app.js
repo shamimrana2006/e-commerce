@@ -11,7 +11,7 @@ app.use(cors_setup);
 app.use(async (req, res, next) => {
   await DB_connection();
 
-  next();
+  next(); 
 });
 
 app.use(express.json());
