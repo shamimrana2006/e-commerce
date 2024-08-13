@@ -43,14 +43,16 @@ function Home() {
      <span> {name}</span>
       <div className=" flex justify-end flex-row items-center">
         <span className="mr-2 text-green-500">{res}</span>
-        <button className="p-2 text-sm  rounded-lg bg-blue-200" onClick={reset_user}>Reset User</button>
+        <button className="text-black py-1 px-3 bg-gray-300 border rounded"><Link to="/user/login  ">Login</Link></button>
+        <button className="text-black py-1 px-3 bg-gray-300 border rounded"><Link to="/user/register ">Register</Link></button>
       </div>
       </div>
       <div className="w-screen h-screen flex flex-col items-center justify-center bg-gray-200 text-white">
         <h2 className="uppercase text-gray-500 ">
           welcome
         </h2>
-        <button><Link to="/login">aa</Link></button>
+        <button className="p-2 text-sm  rounded-lg bg-blue-200" onClick={reset_user}>Reset User</button>
+       
       </div>
     </div>
   );
