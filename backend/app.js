@@ -6,11 +6,12 @@ const { user_router } = require("./routers/users/user_router");
 const { seed_router } = require("./routers/users/seed_users_router");
 const { users_model } = require("./models/db_model/db_model");
 const { DB_connection } = require("./service/db_connection");
+const { cleare_database } = require("./service/database_cleaner");
 const url = process.env.cors_url;
 app.use(cors_setup);
 app.use(async (req, res, next) => {
   await DB_connection();
-
+  await cleare_database();
   next(); 
 });
 
