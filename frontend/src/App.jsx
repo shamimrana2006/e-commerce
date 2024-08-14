@@ -13,11 +13,11 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="*" element={<h1 className="h-screen flex-col flex justify-center items-center w-screen bg-gray-900 text-white uppercase"> <span className="text-2xl">404</span> <br /> not found</h1>} />
         <Route path="/" element={<Home />} />
         <Route path="/user/register" element={<Register />} />
         <Route path="/user/register/verification" element={<Verification />} />
         <Route path="/user/login" element={<Login />} />
-        <Route path="*" element={<h1 className="h-screen flex-col flex justify-center items-center w-screen bg-gray-900 text-white uppercase"> <span className="text-2xl">404</span> <br /> not found</h1>} />
       </Routes>
     </Router>
   );
